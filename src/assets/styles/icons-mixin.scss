@@ -1,0 +1,343 @@
+@mixin public {
+	background-image: url(/assets/img/icons.png);
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+}
+
+@mixin i-TV {
+	@include public;
+
+	width: 17px;
+	height: 17px;
+	background-position: -854px -87px;
+	line-height: 17px;
+}
+
+@mixin i-v_contribute {
+	@include public;
+
+	width: 21px;
+	height: 21px;
+	background-position: -470px -918px;
+}
+
+@mixin i-v_manage {
+	@include public;
+
+	width: 21px;
+	height: 23px;
+	background-position: -470px -980px;
+}
+
+@mixin i-create_center {
+	@include public;
+
+	width: 21px;
+	height: 20px;
+	background-position: -470px -1750px;
+}
+
+@mixin i-ranking {
+	@include public;
+
+	width: 17px;
+	height: 17px;
+	background-position: -663px -662px;	
+}
+
+@mixin i-search {
+	@include public;
+
+	width: 20px;
+	height: 20px;
+	background-position: -662px -727px;	
+}
+
+@mixin i-search_hover {
+	@include public;
+
+	width: 20px;
+	height: 20px;
+	background-position: -727px -727px;	
+}
+
+@mixin i-arrow1 {
+	@include public;
+    
+    width: 6px;
+    height: 10px;
+	background-position: -476px -603px;
+}
+
+@mixin i-dot-hover {
+	@include public;
+
+	width: 16px;
+	height: 16px;
+	background-position: -920px -793px;
+}
+
+@mixin i-dot {
+	@include public;
+
+	width: 16px;
+	height: 16px;
+	background-position: -856px -793px;
+}
+
+@mixin i-dot-selected {
+	@include public;
+
+	width: 19px;
+	height: 19px;
+	background-position: -854px -727px;
+}
+
+@mixin i-play {
+	@include public;
+
+	width: 13px;
+	height: 13px;
+	background-position: -281px -89px;
+}
+
+@mixin i-comments {
+	@include public;
+
+	width: 13px;
+	height: 12px;
+	background-position: -281px -218px;
+}
+
+@mixin i-crown-golden {
+	@include public;
+
+	width: 25px;
+	height: 38px;
+	background-position: -848px -147px;
+} 
+
+@mixin i-crown-silver {
+	@include public;
+
+	width: 25px;
+	height: 38px;
+	background-position: -848px -211px;
+} 
+
+@mixin i-heart {
+	@include public;
+}
+
+@mixin i-home {
+	@include public;
+
+	width: 18px;
+	height: 17px;
+	background-position: -664px -1175px;
+}
+
+@mixin i-camera {
+	@include public;
+
+	width: 19px;
+	height: 18px;
+	background-position: -664px -534px;
+}
+
+@mixin i-ground {
+	@include public;
+
+	width: 19px;
+	height: 18px;
+	background-position: -663px -920px;
+}
+
+@mixin i-xiaoheiwu {
+	@include public;
+
+	width: 20px;
+	height: 19px;
+	background-position: -726px -535px;
+}
+
+@mixin i-popularize {
+	@include public;
+
+	width: 38px;
+	height: 35px;
+	background-position: -141px -77px;
+}
+
+@mixin i-live {
+	@include public;
+
+	width: 38px;
+	height: 35px;
+	background-position: -141px -665px;
+}
+
+@mixin i-animation {
+	@include public;
+
+	width: 38px;
+	height: 35px;
+	background-position: -141px -911px;
+}
+
+@mixin i-fanju {
+	@include public;
+
+	width: 38px;
+	height: 38px;
+	background-position: -141px -141px;
+}
+
+
+@mixin i-guochuang {
+	display: inline-block;
+	background-img: url(/assets/img/d1.png);
+	width: 40px;
+	height: 40px;	
+}
+ 
+
+@mixin i-music {
+	@include public;
+
+	width: 38px;
+	height: 40px;
+	background-position: -141px -266px;
+}
+
+
+@mixin i-dance {
+	@include public;
+
+	width: 38px;
+	height: 40px;
+	background-position: -141px -461px;
+}
+
+
+
+@mixin i-game {
+	@include public;
+
+	width: 38px;
+	height: 41px;
+	background-position: -141px -203px;	
+}
+
+
+
+@mixin i-technology {
+	@include public;
+
+	width: 38px;
+	height: 40px;
+	background-position: -141px -524px;
+}
+
+
+
+@mixin i-lift {
+	@include public;
+
+	width: 43px;
+	height: 37px;
+	background-position: -136px -972px;
+}
+
+
+
+@mixin i-guichu {
+	@include public;
+
+	width: 38px;
+	height: 41px;
+	background-position: -141x -331px;
+}
+
+
+
+@mixin i-fashion {
+	@include public;
+
+	width: 38px;
+	height: 42px;
+	background-position: -141x -717px;
+}
+
+
+
+@mixin i-entertainment {
+	@include public;
+
+	width: 38px;
+	height: 40px;
+	background-position: -141x -1032px;
+}
+
+
+
+@mixin i-mivie {
+	@include public;
+
+	width: 38px;
+	height: 37px;
+	background-position: -141x -397px;
+}
+
+
+
+@mixin i-TVseries {
+	@include public;
+
+	width: 38px;
+	height: 38px;
+	background-position: -141x -846px;	
+}
+
+
+
+@mixin i-recommended {
+	@include public;
+
+	width: 38px;
+	height: 30px;
+	background-position: -141x -785px;
+}
+
+@mixin i-arrow-down {
+	@include public;
+
+	width: 16px;
+	height: 6px;
+	background-position: -475px -157px;
+}
+
+@mixin i-hot {
+	@include public;
+
+	width: 18px;
+	height: 16px;
+	background-position: -663px -1112px;
+}
+
+@mixin i-rotate {
+	@include public;
+
+	width: 12px;
+	height: 13px;
+	background-position: -475px -89px;
+}
+
+@mixin i-arrow-right {
+	@include public;
+
+	width: 9px;
+	height: 14px;
+	background-position: -477px -216px;
+}

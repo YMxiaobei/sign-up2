@@ -1,0 +1,96 @@
+@import "~compass-mixins/lib/compass";
+@import "src/assets/styles/icons-mixin.scss";
+@import "src/assets/styles/color.scss";
+@import "src/assets/styles/variable.scss";
+
+$height: 106px;
+$bg-img-width: 980px;
+$form-t-height: 50px;
+$form-t-txt-height: 47px;
+$form-t-txt-width: 120px;
+
+
+main {
+	width: 100%;
+
+
+	.top-bg {
+		height: $height;
+		width: 100%;
+		background-image: url(/assets/img/rl_topbg.png);
+		background-repeat: repeat-x;
+
+		.img {
+			height: 100%;
+			width: $bg-img-width;
+			background-image: url(/assets/img/cover.png);
+			margin: 0px auto;
+		}
+	}
+
+	.main {
+		width: $bg-img-width;
+		margin: 0px auto;
+
+		.form-t {
+			width: 100%;
+			height: $form-t-height;
+			position: relative;
+
+			.mid-l {
+				width: 100%;
+				height: 2px;
+				background-color: #DDD;
+				margin-top: ( $form-t-height - 2 ) / 2;
+			}
+
+			.txt {
+				width: $form-t-txt-width;
+				height: $form-t-txt-height;
+				background-image: url(/assets/img/t1.png);
+				margin: - ( $form-t-txt-height - 2 ) / 2 auto 0px auto;
+			}
+		}
+
+		form {
+			width: $bg-img-width;
+			margin: 20px auto 0px auto; 
+			text-align: center;
+
+			.input-wrap {
+				width: 417px;
+				height: 42px;
+				border-radius: 5px;
+				border: 1px solid #ddd;
+				margin: 20px  auto 0px auto;
+				overflow: hidden;
+
+				&:last-child {
+					margin-top: 40px;
+				}
+
+				input {
+					width: 100%;
+					height: 100%;
+					border: 0px;
+					padding: 0px 20px;
+				}
+			}
+
+			.btn-submit {
+				width: 417px;
+				height: 42px;
+				background-color: $gray1;
+				display: block;
+				margin: 20px  auto 0px auto;
+				border-radius: 5px;
+				border: 1px solid $gray1;
+				@include transition(background-color 0.3s);
+
+				&:hover {
+					background-color: #ddd;
+				}
+			}
+		}
+	}
+}

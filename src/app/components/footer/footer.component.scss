@@ -1,0 +1,86 @@
+@import "~compass-mixins/lib/compass";
+@import "src/assets/styles/icons-mixin.scss";
+@import "src/assets/styles/color.scss";
+@import "src/assets/styles/variable.scss";
+
+$height: 322px;
+$width: 980px;
+
+* {
+	box-sizing: content-box;
+}
+
+footer {
+	width: 100%;
+	hwight: $height;
+
+	
+
+	.content {
+		width: $width;
+		height: 100%;
+		margin: 50px auto;
+
+		.footer-link {
+			width: 100%;
+			white-space: normal;
+			line-height: 1em;
+			position: relative;
+
+			.border1, .border2 {
+				width: 1px;
+				background: $gray1;
+				position: absolute;
+				height: 100%;
+				left: $width / 3;
+				top: 0px;
+			}
+
+			.border2 {
+				left: $width / 3 * 2;
+			}
+
+			.mid {
+				padding: 0px 40px 0px 60px;
+			}
+
+			.right {
+				padding-left: 20px;
+			}
+			
+			.left, .mid, .right {
+				display: inline-block;
+				width: $width / 3 - 40px;
+				vertical-align: top;
+
+				ul {
+					margin-top: 10px;
+
+
+					li {
+						display: inline-block;
+						width: ( $width / 3 - 40 ) / 3;
+						margin-left: -4px;
+						margin-top: 10px;
+
+						a {
+							font-size: 14px;
+							color: $font-color1;
+							line-height: 1em;
+						}
+					}	
+				}
+
+				.title {
+					font-size: 14px;
+					color: #717171;
+					margin-left: -4px;
+				}
+			}
+
+			.mid, .right {
+				margin-left: -5px;
+			}
+		}
+	}
+}
