@@ -1,0 +1,66 @@
+<main>
+	<div class="top-bg">
+		<div class="img"></div>
+	</div>
+	<div class="main">
+		<div class="form-t">
+			<div class="mid-l"></div>
+			<div class="txt">登录</div>
+		</div>
+		<div class="left">
+			<div class="top" (mouseover)="qrcode_mouseover=true" (mouseout)="qrcode_mouseover=false">
+				<div class="img" [ngClass]="{hidden:qrcode_mouseover}">
+					<i class="i-phone_man"></i>
+					<img src="data:image/png;base64,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">
+				</div>
+				<div class="img-hover hidden" [ngClass]="{hidden:!qrcode_mouseover}"></div>
+			</div>
+			<div class="bottom">
+				<p>
+					<span class="title">扫描二维码登录</span>
+					<span class="app-link">
+						请使用
+					 	<a href="javascript:;">哔哩哔哩客户端</a>
+					 </span>
+				</p>
+			</div>
+		</div>
+
+		<div class="right">
+			<form #f="ngForm">
+				<div class="input-wrap">
+					<input type="text" name="username" placeholder="昵称（例：哔哩哔哩）" required ngModel>
+				</div>
+				<div class="input-wrap">  
+					<input type="text" name="passwd" placeholder="密码（6-16个字符组成，区分大小写）" required ngModel>
+				</div>
+				<div class="retrieve-pwd">
+					<a href="javascript:;">忘记密码? ></a>
+				</div>
+				<div class="varidation-container">
+					<app-validation></app-validation>
+				</div>
+				<div class="remenber-me">
+					<input type="checkbox" name="remenber-me-check" id="remenber-me-check">
+					<label for="remenber-me-check">	记住我</label>
+					<span class="tip"> 不是自己的电脑上不要勾选此项</span>
+				</div>
+				<div class="decision">
+					<input type="button" class="btn-submit" value="登录">
+					<a href="javascript:;" class="sign-up">注册</a>
+				</div>
+				<div class="third-party-account">
+					<a href="javascript:;" class="weibo">
+						<span class="icon"></span>
+						<span class="txt">微博账号登录</span>
+					</a>
+					<a href="javascript:;" class="weixin">
+						<span class="icon"></span>
+						<span class="txt">QQ账号登录</span>
+					</a>
+				</div>
+			</form>
+			<div class="border"></div>
+		</div>
+	</div>
+</main>

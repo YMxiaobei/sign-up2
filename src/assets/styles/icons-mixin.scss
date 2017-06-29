@@ -341,3 +341,51 @@
 	height: 14px;
 	background-position: -477px -216px;
 }
+
+@mixin i-weixin {
+	@include public;
+
+	width: 60px;
+	height: 60px;
+	background-position: -1024px -67px;
+}
+
+@mixin i-weixin-hover {
+	@include public;
+
+	width: 60px;
+	height: 60px;
+	background-position: -1091px -67px;
+}
+
+@mixin i-weibo {
+	@include public;
+
+	width: 60px;
+	height: 60px;
+	background-position: -1024px -323px;
+}
+
+@mixin i-weibo-hover {
+	@include public;
+
+	width: 60px;
+	height: 60px;
+	background-position: -1091px -323px;
+}
+
+@mixin i-mobile {
+	@include public;
+
+	width: 60px;
+	height: 60px;
+	background-position: -1024px -196px;
+}
+
+@mixin i-mobile-hover {
+	@include public;
+
+	width: 60px;
+	height: 60px;
+	background-position: -1091px -196px;
+}

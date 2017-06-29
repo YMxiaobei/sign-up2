@@ -11,15 +11,18 @@ $width: 980px;
 }
 
 footer {
+	background-color: #f6f9fa;
 	width: 100%;
-	hwight: $height;
+	height: $height;
 
 	
 
 	.content {
 		width: $width;
 		height: 100%;
-		margin: 50px auto;
+		margin: 0px auto;
+		position: relative;
+		top: 50px;
 
 		.footer-link {
 			width: 100%;
@@ -46,6 +49,38 @@ footer {
 
 			.right {
 				padding-left: 20px;
+
+				li {
+					text-align: center;
+
+					span {
+						display: inline-block;
+					}
+				}
+
+				.i-weixin {
+					@include i-weixin;
+				}
+
+				.i-weixin-hover {
+					@include i-weixin-hover;
+				}
+
+				.i-weibo {
+					@include i-weibo;
+				}
+
+				.i-weibo-hover {
+					@include i-weibo-hover;
+				}
+
+				.i-mobile {
+					@include i-mobile;
+				}
+
+				.i-mobile-hover {
+					@include i-mobile-hover;
+				}
 			}
 			
 			.left, .mid, .right {
@@ -80,6 +115,49 @@ footer {
 
 			.mid, .right {
 				margin-left: -5px;
+			}
+		}
+
+		.certificate-info {
+			width:  $width;
+			margin: 20px auto;
+
+			.left {
+				width: 100px;
+				height: 80px;
+				float: left;
+				background-image: url(/assets/img/footpic.png);
+			}
+
+			.right {
+				width: $width - 120;
+				float: left;
+				margin-left: 20px;
+
+				.txt {
+					font-size: 12px;
+					color: #717171;
+					line-height: 30px;
+				}
+
+				.link {
+					color: $font-color2;
+					font-size: 12px;
+					line-height: 30px;
+
+					h1 {
+						font-size: 12px;
+					   	color: $font-color2;
+					}
+
+					li {
+						display: inline-block;
+					
+						a {
+							color: $font-color2;
+						}
+					}
+				}
 			}
 		}
 	}

@@ -1,0 +1,275 @@
+@import "~compass-mixins/lib/compass";
+@import "src/assets/styles/icons-mixin.scss";
+@import "src/assets/styles/color.scss";
+@import "src/assets/styles/variable.scss";
+
+$height: 106px;
+$bg-img-width: 980px;
+$form-t-height: 50px;
+$form-t-txt-height: 47px;
+$form-t-txt-width: 120px;
+$input-width: 410px; 
+
+main {
+	width: 100%;
+	height: 600px;
+
+	.top-bg {
+		height: $height;
+		width: 100%;
+		background-image: url(/assets/img/rl_topbg.png);
+		background-repeat: repeat-x;
+
+		.img {
+			height: 100%;
+			width: $bg-img-width;
+			background-image: url(/assets/img/cover.png);
+			margin: 0px auto;
+
+		}
+	}
+
+	.main {
+		width: $bg-img-width;
+		margin: 0px auto;
+
+		.form-t {
+			width: 100%;
+			height: $form-t-height;
+			position: relative;
+
+			.mid-l {
+				width: 100%;
+				height: 2px;
+				background-color: #DDD;
+				margin-top: ( $form-t-height - 2 ) / 2;
+			}
+
+			.txt {
+				width: $form-t-txt-width;
+				height: $form-t-txt-height;
+				margin: - ( $form-t-txt-height - 2 ) / 2 auto 0px auto;
+				text-align: center;
+				line-height: $form-t-height;
+				font-size: 40px;
+				background: white;
+			}
+		}
+
+
+		.left {
+			width: $bg-img-width / 2;
+			height: 367px;
+			float: left;
+
+			.top {
+				width: 100%;
+				height: 140px;
+				margin-top: 60px;
+				position: relative;
+
+				.img {
+					width: 140px;
+					height: 140px;
+					margin: 0px  auto;
+					position: relative;
+
+					.i-phone_man {
+						position: absolute;
+						top: -60px;
+						left: 0px;
+						display: block;
+						width: 70px;
+						height: 70px;
+						background-image: url(/assets/img/animation-fps.png);
+					}
+				}
+
+
+				.img-hover {
+					width: 175px;
+					height: 190px;
+					background-image: url(/assets/img/qr-tips.2fcba15.png);
+					position: absolute;
+					top: -35px;
+					left: 160px;
+				}
+			}
+
+			.bottom {
+				width: 100%;
+				height: 155px;
+				background-image: url(/assets/img/2233login.af9c53d.png);
+
+				p {	
+					padding-top: 25px;	
+					span {
+						display: block;
+						text-align: center;
+					}
+
+					span.title {
+						font-size: 18px;
+						letter-spacing: 3px;
+					} 
+
+					span.app-link {
+						font-size: 14px;
+						color: $font-color4;
+						margin-top: 15px;
+					}
+				}
+			}
+		}
+
+		.right {
+			float: left;
+			width: $bg-img-width / 2;
+			text-align: center;
+			margin-top: 20px;
+			position: relative;
+
+			div {
+				display: inline-block;
+			}
+
+			.border {
+				width: 1px;
+				height: 100%;
+				position: absolute;
+				left: 0px;
+				background-color: #DDD;
+				top: 0px;
+			}
+
+			form {
+				.input-wrap {
+					width: $input-width;
+					height: 40px;
+					border-radius: 5px;
+					border: 1px solid #ddd;
+					overflow: hidden;
+					margin-top: 30px;
+					&:first-child {
+						margin-top: 0px;
+					}
+
+					input {
+						width: 90%;
+						padding: 0px 5%;
+						box-sizing: content-box;
+						height: 100%;
+						font-size: 14px;
+						border: 0px;
+					}
+				}
+
+				.retrieve-pwd {
+					width: $input-width;
+					text-align: right;
+					font-size: 12px;
+					margin-top: 10px;
+				}
+
+				.varidation-container {
+					width: $input-width;
+					height: 28px;
+					margin-top: 20px;
+					background-color: red;
+				}
+
+				.remenber-me {
+					width: $input-width;
+					hwight: 25px;
+					margin-top: 20px;
+					text-align: left;
+					font-size: 12px;
+					line-height: 25px;
+
+					lable {
+						color: $font-color4;
+					} 
+
+					span {
+						color: #bbb;
+						margin-left: 10px;
+					}
+				}
+
+				.decision {
+					width: $input-width;
+					hieght: 38px;
+					margin-top: 10px;
+
+					.btn-submit, .sign-up {
+						width: 186px;
+						height: 38px;
+						border-radius: 4px;
+						background-color: #00a7de;
+						border: 1px solid #0381aa;
+						display:block;
+						float:left;
+						color: white;
+						text-align: center;
+						line-height: 38px;
+						font-size: 14px;
+						@include transition(background-color 0.5s);
+						cursor: pointer;
+
+						&:hover {
+							background-color: $blue1;
+						}
+					}
+
+					.sign-up {
+						background-color: white;
+						color: $font-color4;
+						float: right;
+						border: 1px solid #ddd;
+
+						&:hover  {
+							background-color: $gray1;
+						}
+					}
+				}
+
+				.third-party-account {
+					width: $input-width;
+					height: 45px;
+					text-align: left;
+					font-size: 12px;
+					line-height: 45px;
+
+					.weibo, .weixin {
+						.icon {
+							width: 21px;
+							height: 21px;
+							background-image: url(/assets/img/tenxun.png);
+							display: inline-block;
+							vertical-align: middle;
+						}
+
+						.txt {
+							display: inline-block;
+							height: 21px;
+							line-height: 21px;
+							vertical-align: middle;
+						}
+					}
+
+					.weixin {
+						margin-left: 20px;
+
+						.icon {
+							background-position: 0px -41px;
+						}
+					}
+					
+					a {
+						color: $font-color4;
+					}
+				}
+			}
+		}
+	}
+}
