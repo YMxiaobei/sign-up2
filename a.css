@@ -1,4 +1,7 @@
 a {
 	white-space: normal;
 	display: block;
+	cursor: pointer;
+	background-position;
+	outline: none;
 }

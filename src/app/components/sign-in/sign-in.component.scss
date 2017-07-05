@@ -148,10 +148,18 @@ main {
 					height: 40px;
 					border-radius: 5px;
 					border: 1px solid #ddd;
-					overflow: hidden;
 					margin-top: 30px;
+					position: relative;
 					&:first-child {
 						margin-top: 0px;
+					}
+
+					.tip-no_username, .tip-user_not_exit, .tip-pwd_error {
+						display: block;
+						font-size: 12px;
+						position: absolute;
+						top: -19px;
+						color: red;
 					}
 
 					input {
@@ -161,6 +169,7 @@ main {
 						height: 100%;
 						font-size: 14px;
 						border: 0px;
+						border-radius: 5px;
 					}
 				}
 
@@ -175,7 +184,14 @@ main {
 					width: $input-width;
 					height: 28px;
 					margin-top: 20px;
-					background-color: red;
+					text-align: left;
+
+					.tip-varidation-fail {
+						font-size: 12px;
+						color: red;
+						position: relative;
+						bottom: 10px;
+					}
 				}
 
 				.remenber-me {

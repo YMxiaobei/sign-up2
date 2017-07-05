@@ -1,0 +1,552 @@
+@import "~compass-mixins/lib/compass";
+@import "src/assets/styles/icons-mixin.scss";
+@import "src/assets/styles/color.scss";
+@import "src/assets/styles/variable.scss";
+
+$width: 980px;
+$left-width: 240px;
+$right-content-width: 700px;
+$left-content-width: 160px;
+
+.contribute-info {
+	width: $width;
+	background-color: white;
+	margin: 20px auto 0px auto;
+
+	a {
+		text-decoration: none;
+		outline: none;
+	}
+
+	div {
+		display: inline-block;
+	}
+
+	.left {
+		width: $left-width;
+		display: inline-block;
+		height: 100px;
+		vertical-align: top;
+		text-align: center;
+
+		.upload-poster {
+			width: $left-content-width;
+
+			.btn-selecte-poster {
+				width:  100%;
+				height: 100px;
+
+				a {
+					width: 100%;
+					height: 100%;
+					display: block;
+					background-image: url(/assets/img/upload-poster-btn.png);
+				}
+			}
+
+			.upload-preview {
+				width: 100%;
+				margin-top: 20px;
+
+				.upload-placeholder {
+					height: 58px;
+					color: $font-color4;
+					background: $gray1;
+					border: 1px solid $font-color2;
+					border-radius: 5px;
+					line-height: 58px;
+					width: 100%; 
+					font-size: 12px;
+				}
+		
+			}
+		}
+
+		.upload-tip {
+			width: $left-content-width;
+			font-size: 12px;
+			color: $font-color4;
+			text-align: right;
+			margin-top: 20px;
+
+			ul {
+				width: $left-content-width - 8px;
+				display: inline-block;
+				text-align: left;
+
+				li {
+					line-height: 22px;
+					width: 100%;
+
+					&:before {
+						content: "";
+						display: inline-block;
+						width: 6px;
+						height: 6px;
+						border-radius: 50%;
+						background-color: $font-color2; 
+						position: relative;
+						right: 6px;
+						bottom: 2px;
+					}
+				}
+			}
+		}
+	}
+
+	.right {
+		width: $width - $left-width;
+		display: inline-block;
+		margin-left: -5px;
+		display: inline-block;
+		vertical-align: top;
+		text-align: center;
+
+		.v-upload-progress {
+			display: inline-block;
+			width: $right-content-width;
+
+			.left {
+				width: 44px;
+				height: 44px;
+				vertical-align: top;
+
+				.icon {
+					@include i-file;
+
+					font-size: 16px;
+					color: $blue1;
+					text-align: center;
+					line-height: 44px;
+				}
+			}
+
+			.right {
+				height: 44px;
+				vertical-align: top;
+				width: 640px;
+				margin-left: 700px - 640px - 44px - 5;
+				text-align: left;
+
+				.controllor {
+					width: 100%;
+
+					.txt {
+						font-size: 12px;
+						height: 12px;
+						color: $font-color4;
+						height: 16px;
+
+						.title {
+							color: $blue1;
+						}
+
+						.progress-percentage {
+							.percentage {
+								color: $blue1; 
+							}
+						}
+					}
+
+					.button {
+						display:  block;
+						float: right;
+
+						.btn-play {
+							margin-right: 20px;
+
+							@include i-play;
+
+							&:hover {
+								@include i-play-hover;	
+							}
+						}
+
+						.btn-stop {
+							@include i-stop;
+
+							&:hover {
+								@include i-stop-hover;	
+							}
+						}
+
+						.btn-delete {
+							@include i-delete;
+						}
+					}
+				}
+
+				.progress-bar {
+					width: 100%;
+					height: 4px;
+					border-radius: 2px;
+					background-color: $gray1;
+					margin-top: 13px;
+				}	
+			}
+		}
+
+		.v-upload-info {
+			width: $right-content-width;
+			margin-top: 20px;
+
+			.header {
+				width: 100%;
+				height: 36px;
+				line-height: 36px;
+				text-align: left;
+
+				.nav {
+					width: 562px;
+					height: 100%;
+					font-size: 12px;
+					border-bottom: 1px solid $gray1;
+
+					ul {
+						li {
+							float: left;
+
+							a {
+								color: $font-color4;
+								width: 68px;
+								height: 35px;
+								text-align: center;
+								display: block;
+								position: relative;
+								overflow: hidden;
+								top: 2px;
+
+								.handle {
+									width: 100%;
+									height: 1px;
+									background: $blue1;
+									position: absolute;
+									left: 0px;
+									bottom: 0px;
+
+									span {
+										width: 5px;
+										height: 5px;
+										background: $blue1;
+										position: absolute;
+										left: ( 68px - 10px ) / 2;
+										display: block;
+										@include transform(rotate(45deg));
+										top: -2px;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
+			.commond {
+				width: $right-content-width;
+				display: inline-block;
+				margin-top: 30px;
+
+				.section {
+					width: 100%;
+					display: inline-block;
+					text-align: left;
+
+					.title {
+						font-size: 14px;
+						line-hieght: 16px;
+					}
+				}
+
+				.sections {
+					width: 100%;
+					display: inline-block; 
+
+					.type {
+
+						.c-type-content {
+							width: 100%;
+							margin-top: 20px;
+							font-size: 14px;
+							margin-left: -20px;
+
+							label {
+								position: relative;
+								bottom: 5px;
+							}
+
+							input {
+								margin-left: 20px;
+							}
+						}
+
+						.statement {
+							font-size: 14px;
+							width: 100%;
+							margin-top: 15px;
+
+							label {
+								position: relative;
+								bottom: 4px;
+								left: 4px;
+							}
+						}
+					}
+
+					.section-select {
+						margin-top: 30px;
+
+						.v-types {
+							margin-top: 10px;
+							margin-left: -11px;
+							margin-top: px;
+
+							.v-type {
+								display: inline-block;
+								width: 77px;
+								margin-left: 11px;
+								margin-top: 10px;
+							}
+						}
+
+						.selecte-result {
+							width: 100%;
+							margin-top: 20px;
+							font-size: 12px;
+
+							.result {
+								font-size: 14px;
+								color: $blue1;
+							}
+						}
+					}
+
+					.title {
+						margin-top: 30px;
+
+						.v-title {
+							width: 100%;
+							height: 42px;
+							border-radius: 5px;
+							border: 1px solid $gray1;
+							overflow: hidden;
+							line-height: 42px;
+							margin-top: 20px;
+
+							input {
+								height: 100%;
+								width: $right-content-width - 100px;
+								padding: 0px 10px;
+								border: 0px;
+								font-size: 12px;
+							}
+
+							.input-size {
+								height: 100%;
+								float: right;
+								width: 50px;
+								display: block;
+								font-size: 12px;
+								color: $font-color4;
+								text-align: center;
+							}
+						}
+
+						.tip {
+							color: $blue1;
+							margin-top: 10px;
+							font-size: 12px;
+							line-height: 20px;
+
+							.icon {
+								@include i-tip;
+							}
+						}
+					}
+
+					.add-tags {
+						margin-top: 30px;
+						position: relative;
+
+						.addable-tags-remain {
+							font-size: 12px;
+							color: $font-color4;
+							position: absolute;
+							right: 0px;
+							top: 30px;
+						}
+						
+						.tags-container {
+							width: 100%;
+							padding-bottom: 20px;
+							border-radius: 5px;
+							border: 1px solid $gray1;
+							color: $font-color4;
+							text-align: center;
+							margin-top: 20px;
+
+							.recommend-tags {
+								width: $right-content-width - 40px;
+								margin: 20px auto 0px auto;
+								text-align: left;
+
+								h1 {
+									font-size: 12px;
+								}
+
+								ul {
+									margin-left: -10px;
+									margin-top: 10px;
+
+									li {
+										display: inline-block;
+										margin-left: 10px;
+										margin-top: 10px;
+
+										a {
+											display: inline-block;
+											height: 22px;
+											padding: 0px 18px;
+											line-height: 22px;
+											border-radius: 11px;
+											border: 1px solid $gray1;
+											font-size: 12px;
+											color: $font-color4;
+
+											&:hover {
+												color: $blue1;
+												border: 1px solid $blue1;
+											}
+										}
+										
+									}
+								}
+							}
+
+							.custom-tags {
+								width: $right-content-width - 40px;
+								margin: 20px auto 0px auto;
+								text-align: left;
+								margin-top: 50px;
+
+								h1 {
+									font-size: 12px;
+								}
+
+								ul {
+									display: inline-block;
+
+									li {
+										display: inline-block;
+										vertical-align: top;
+										line-height: 22px;
+
+										a {
+											display: inline-block;
+											height: 22px;
+											color: white;
+											background-color: $blue1;
+											padding: 0px 18px;
+											border: 1px solid $blue1;
+											border-radius: 11px;
+										}
+									}
+								}
+
+								.add-custom-tags {
+									margin-top: 10px;
+									verticala-align: top;
+									margin-left: 10px;
+
+									.custom-tag {
+										height: 22px;
+										width: 120px;
+										border: 1px solid $gray1;
+										border-radius: 11px;
+										overflow: hidden;
+										vertical-align: top;
+
+										input {
+											height: 100%;
+											width: 90%;
+											box-sizing: content-box;
+											padding: 0px 5%;
+											border: 0px;
+											font-size: 12px;
+										}
+									}
+
+									.tip {
+										font-size: 12px;
+										line-height: 22px;
+										vertical-align: top;
+										margin-left: 10px;
+									}
+								}
+							}
+						}
+					}
+
+					.v-Introduction {
+						margin-top: 30px;
+
+						.v-Introduction-content {
+							width: 100%;
+							height: 150px;
+							margin-top: 20px;
+							position: relative;
+
+							.size {
+								font-size: 12px;
+								color: $font-color4;
+								position: absolute;
+								bottom: 0px;
+								right: 5px;
+								line-height: 22px;
+							}
+
+							textarea {
+								height: 150px - 10px;
+								width: $right-content-width - 20px;
+								padding: 5px 10px;
+								box-sizing: content-box;
+								line-height: 20px;
+								font-size: 12px;
+								resize: none;
+								border-radius: 5px;
+								border: 1px solid $gray1;
+							}
+						}
+					}
+				} 
+			}
+
+			.btn-save {
+				font-size: 14px;
+				width: 100%;
+				text-align: left;
+				margin-top: 30px;
+
+				a {
+					color: $blue1;
+				}
+			}
+
+			.btn-submit {
+				width: 170px;
+				height: 42px;
+				display:  inline-block;
+				border-radius: 5px;
+				line-height: 42px;
+				text-align: center;
+				color: white;
+				font-size: 14px;
+				background-color: $blue1;
+				margin-top: 30px;
+
+				&:hover {
+					background-color: $blue2;
+				}
+			}
+		}
+	}
+} 

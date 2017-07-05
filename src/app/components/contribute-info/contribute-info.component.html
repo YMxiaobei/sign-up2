@@ -1,0 +1,171 @@
+<div class="contribute-info">
+	<div class="left">
+		<div class="upload-poster">
+			<div class="btn-selecte-poster">
+				<a href="javascrtpt:;"></a>
+			</div>
+			<div class="upload-preview">
+				<div class="upload-placeholder">
+					<p>正在生成可选封面...</p>
+				</div>
+			</div>
+		</div>
+		<div class="upload-tip">
+			<ul>
+				<li>建议上传高清封面≥960*600</li>
+				<li>与视频内容差异过大或没有上传图片，将自动截取影片画面</li>
+			</ul>
+		</div>
+	</div>
+	<div class="right">
+		<div class="v-upload-progress">
+			<div class="left">
+				<div class="icon">
+					<p>1</p>
+				</div>
+			</div>
+			<div class="right">
+				<div class="controllor">
+					<div class="txt">
+						<span class="title">{{v_title}}</span>
+						<span class="status">{{upload_status}}...</span>
+						<div class="progress-percentage">
+							<span>已完成</span>
+							<span class="percentage">{{progress_percentage}}%</span>
+						</div>
+					</div>
+					<div class="button">
+						<a href="javascript:;" class="btn-play"></a>
+						<a href="javascript:;" class="btn-delete"></a>
+					</div>
+				</div>
+				<div class="progress-bar">
+					<div class="fill">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="v-upload-info">
+			<div class="header">
+				<div class="nav">
+					<ul class="list-unstyled">
+						<li>
+							<a href="javascript:;">
+								<span class="txt">基本信息</span>
+								<div class="handle">
+									<span></span>
+								</div>
+							</a>
+						</li>
+						<li class="hidden">
+							<a href="javascript:;">
+								<span class="txt">高级设置</span>
+								<div class="handle">
+									<span></span>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="commond">
+				<ul class="list-unstyled sections">
+					<li class="type section">
+						<h1 class="title">投稿类型</h1>
+						<div class="c-type-content">
+							<input type="radio" name="c-type" id="c-type-self_make">
+							<label for="c-type-self_make">自制</label>
+							<input type="radio" name="c-type" id="c-type-reprint">
+							<label for="c-type-reprint">转载</label>
+						</div>
+						<div class="statement">
+							<input type="checkbox" name="statement" id="c-type-statement">
+							<label for="c-type-statement">未经作者授权 禁止转载</label>
+						</div>
+					</li>
+					<li class="section-select section">
+						<h1 class="title">选择分区</h1>
+						<ul class="list-unstyled v-types">
+							<li *ngFor="let type of v_types" class="v-type">
+								<app-classify-v-type [data]="type"></app-classify-v-type>
+							</li>
+						</ul>
+						<div class="selecte-result">
+							<span>您当前选择的分区是：</span>
+							<span class="result">{{selected_v_type}} → {{selected_v_sub_type}}</span>
+						</div>
+					</li>
+					<li class="title section">
+						<h1 class="title">稿件标题</h1>
+						<div class="v-title">
+							<input type="text" name="v-title" [(ngModel)]='v_title' >
+							<div class="input-size">
+								<span class="current-size">{{v_title.length}}</span>
+								/
+								<span class="max-size">{{max_title_size}}</span>
+							</div>
+						</div>
+						<div class="tip">
+							<p>
+								<span class="icon"></span>
+								建议使用【作品题材】标题的类似格式填写标题（作品风格，作品类型建议写入tag）（举例：【新约禁书目录10卷】只要有希望，就好……【MAD】）
+							</p>
+						</div>
+					</li>
+					<li class="add-tags section">
+						<h1 class="title">添加标签</h1>
+						<div class="addable-tags-remain">
+							<p>还可添加{{addable_tags_remain}}个标签</p>
+						</div>
+						<div class="tags-container">
+							<div class="recommend-tags">
+								<h1>推荐标签</h1>
+								<ul>
+									<li *ngFor="let tag of recommend_tags">
+										<a href="javascript:;">{{tag}}</a>
+									</li>
+								</ul>
+							</div>
+							<div class="custom-tags">
+								<h1>自定义标签</h1>
+								<ul>
+									<li>
+										<a href="javascript:;">adfasdf</a>
+									</li>
+								</ul>
+								<div class="add-custom-tags">
+									<div class="custom-tag">
+										<input type="text" name="custom-tag">
+									</div>
+									<div class="tip">按回车键Enter创建标签</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="v-Introduction section">
+						<h1 class="title">视频简介</h1>
+						<div class="v-Introduction-content">
+							<textarea placeholder="填写更全面的相关信息,让更多的人能找到你的视频吧! BGM 建议格式：音乐人-音乐名使用素材 举例：埃罗芒阿老师  Re:CREATORS使用别人的MAD作为自己作品的素材是不允许的！" [(ngModel)]="v_Introduction"></textarea>
+							<div class="size">
+								<span class="current-size">{{v_Introduction.length}}</span>
+								/
+								<span class="max-size">{{max_v_Introduction_size}}</span>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="advance"></div>
+			<div class="btn-save">
+				<a href="javascript:;" class="">以上信息保存为模版</a>
+			</div>
+			<div class="set-release-time"></div>
+			<a href="javascript:;" class="btn-submit">提交稿件</a>
+		</div>
+	</div>
+	<div class="img-cut-out">
+		<app-img-cut-out></app-img-cut-out>
+	</div>
+	
+</div>

@@ -389,3 +389,245 @@
 	height: 60px;
 	background-position: -1091px -196px;
 }
+
+@mixin i-slide {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/icons2.png);
+
+	width: 38px;
+	height: 38px;
+	background-position: -3px -87px;
+}
+
+@mixin i-slide-hover {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/icons2.png);
+
+	width: 38px;
+	height: 38px;
+	background-position: -3px -219px;
+}
+
+@mixin i-refresh {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/icons2.png);
+
+	width: 14px;
+	height: 14px;
+	background-position: 0px -1179px;
+}
+
+@mixin i-refresh-hover {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/icons2.png);
+
+	width: 14px;
+	height: 14px;
+	background-position: 0px -1193px;
+}
+
+@mixin i-lock {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/icons2.png);
+
+	width: 26px;
+	height: 26px;
+	background-position: 0px -1153px;
+}
+
+@mixin i-ok {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/icons2.png);
+
+	width: 26px;
+	height: 26px;
+	background-position: 0px -304px;
+}
+
+@mixin i-fail {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/icons2.png);
+
+	width: 26px;
+	height: 26px;
+	background-position: 0px -414px;
+}
+
+@mixin i-artical {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/icons3.png);
+
+	width: 11px;
+	height: 13px;
+	background-position: -27px -25px;
+}
+
+@mixin i-artical-hover {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/icons3.png);
+
+	width: 11px;
+	height: 13px;
+	background-position: -91px -25px;
+}
+
+@mixin i-question {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/icons3.png);
+
+	width: 13px;
+	height: 13px;
+	background-position: -26px -90px;
+}
+
+@mixin i-question-hover {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/icons3.png);
+
+	width: 13px;
+	height: 13px;
+	background-position: -90px -90px;
+}
+
+@mixin i-file {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/icons3.png);
+
+	width: 44px;
+	height: 44px;
+	background-position: -202px -10px;
+}
+
+@mixin i-play {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/icons3.png);
+
+	width: 9px;
+	height: 12px;
+	background-position: -29px -1434px;
+}
+
+@mixin i-play-hover {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/icons3.png);
+
+	width: 9px;
+	height: 12px;
+	background-position: -92px -1434px;
+}
+
+@mixin i-stop {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/icons3.png);
+
+	width: 9px;
+	height: 12px;
+	background-position: -27px -1370px;
+}
+
+@mixin i-stop-hover {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/icons3.png);
+
+	width: 9px;
+	height: 12px;
+	background-position: -91px -1370px;
+}
+
+@mixin i-delete {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/icons3.png);
+
+	width: 13px;
+	height: 13px;
+	background-position: -25px -1305px;
+}
+
+@mixin i-tip {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/icons3.png);
+
+	width: 13px;
+	height: 17px;
+	background-position: -26px -856px;
+}
+
+@mixin i-cancel {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/icons3.png);
+
+	width: 11px;
+	height: 11px;
+	background-position: -24px -794px;
+}
+
+@mixin i-cancel-hover {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/icons3.png);
+
+	width: 11px;
+	height: 11px;
+	background-position: -88px -794px;
+}
+
+@mixin i-reselecte {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/icons3.png);
+
+	width: 13px;
+	height: 13px;
+	background-position: -25px -537px;
+}
+
+@mixin i-reselecte-hover {
+	display: inline-block;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	background-image: url(/assets/img/icons3.png);
+
+	width: 13px;
+	height: 13px;
+	background-position: -89px -537px;
+}

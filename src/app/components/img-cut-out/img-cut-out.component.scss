@@ -1,0 +1,174 @@
+@import "~compass-mixins/lib/compass";
+@import "src/assets/styles/icons-mixin.scss";
+@import "src/assets/styles/color.scss";
+@import "src/assets/styles/variable.scss";
+
+$width: 840px;
+$content-width: 784px;
+
+.main {
+	width: $width;
+	background-color: white;
+	border-radius: 5px;
+	@include box-shadow(1px 1px 3px 1px rgba(0,0,0,0.2));
+	text-align: center;
+	padding-bottom: 40px;
+
+	div {
+		display: inline-block;
+	}
+
+	.header {
+		width: $content-width;
+		height: 50px;
+		line-height: 50px;
+		text-align: center;
+		font-size: 14px;
+		border-bottom: 1px solid $gray1;
+		position: relative;
+
+		.btn-close {
+			@include i-cancel;
+			position: absolute;
+			right: 0px;
+			top: ( 50px - 11px ) / 2;
+
+			&:hover {
+				@include i-cancel-hover;
+			}
+		}
+	}
+
+	.content {
+		width: $content-width;
+		margin-top: 20px;
+
+		.left {
+			position: relative;
+			width: 500px;
+			text-align: left;	
+
+			.border-right {
+				width: 1px;
+				height: 100%;
+				background-color: $gray1;
+				position: absolute;
+				top: 0px;
+				right: 0px;
+			}
+
+			.controllor {
+				width: 480px;
+				border-radius: 5px;
+				overflow: hidden;
+
+				background-color: black;
+				padding: 20px 0px;
+
+				.poster {
+					width: 100%;
+					position: relative;
+
+					img {
+						height: 200px;
+					}
+
+					.cut-out-frame {
+						width: 100%;
+						height: 100%;
+						position: absolute;
+						top: 0px;
+						left: 0px;
+						background-color: red;
+						z-index: 999;
+					}
+				}
+
+				
+			} 
+
+			.btn-reselevte {
+				font-size: 13px;
+				color: $font-color4;
+				margin-top: 10px;
+				display: inline-block;
+
+				&:hover {
+					color: $blue1;
+				}
+
+				.icon {
+					@include i-reselecte;
+					position: relative;
+					bottom: 2px;
+				}
+
+				.icon-hover {
+					@include i-reselecte-hover;
+					position: relative;
+					bottom: 2px;
+				}
+			}
+		}
+
+		.right {
+			width: $content-width - 500 - 5;
+			vertical-align: top;
+
+			.result-preview {
+				height: 150px;
+				width: 100%;
+				text-align: center;
+
+				.poster {
+					width: 240px;
+					height: 100%;
+					border-radius: 5px;
+					background-color: red;
+					position:  relative;
+
+					.img-wrap {
+						width: 321px;
+						display: inline-block;
+						position: absolute;
+					}
+				}
+
+				.tip {
+					width: 240px;
+
+					text-align: left;
+					font-size: 13px;
+					color: $font-color4;
+					margin-top: 20px;
+				}
+			}
+		}
+	}
+
+	.footer {
+		width: $content-width;
+		margin-top: 40px;
+
+		.btn-submit, .btn-cancel {
+			width: 110px;
+			height: 32px;
+			border-radius: 5px;
+			display: inline-block;
+			font-size: 12px;
+			line-height: 32px;
+		}
+
+		.btn-submit {
+			background-color: $blue1;
+			border: 1px solid $blue1;
+			color: white;
+		}
+
+		.btn-cancel {
+			border: 1px solid $font-color2;
+			color: $font-color4;
+			margin-left: 20px;
+		}
+	}
+}

@@ -29,15 +29,19 @@
 		<div class="right">
 			<form #f="ngForm">
 				<div class="input-wrap">
+					<span class="tip-no_username" *ngIf="no_username">用户名不能为空！</span>
+					<span class="tip-user_not_exit" *ngIf="user_not_exit">该用户名不存在!</span>
 					<input type="text" name="username" placeholder="昵称（例：哔哩哔哩）" required ngModel>
 				</div>
 				<div class="input-wrap">  
+					<span class="tip-pwd_error" *ngIf="pwd_error">密码错误!</span>
 					<input type="text" name="passwd" placeholder="密码（6-16个字符组成，区分大小写）" required ngModel>
 				</div>
 				<div class="retrieve-pwd">
 					<a href="javascript:;">忘记密码? ></a>
 				</div>
 				<div class="varidation-container">
+					<span class="tip-varidation-fail" *ngIf="varidation_fail	">拼图验证没有通过!</span>
 					<app-validation></app-validation>
 				</div>
 				<div class="remenber-me">
@@ -46,7 +50,7 @@
 					<span class="tip"> 不是自己的电脑上不要勾选此项</span>
 				</div>
 				<div class="decision">
-					<input type="button" class="btn-submit" value="登录">
+					<input type="button" class="btn-submit" value="登录" (click)="submit(f)">
 					<a href="javascript:;" class="sign-up">注册</a>
 				</div>
 				<div class="third-party-account">

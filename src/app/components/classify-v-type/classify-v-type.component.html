@@ -1,0 +1,24 @@
+<div class="classify-v-type">
+	<span class="main-type" (click)="sub_show=true" [ngClass]="{selected:selected}">
+		{{data.name}}
+	</span>
+	<ul class="sub-types" *ngIf="sub_show">
+		<ng-template ngFor let-sub_type [ngForOf]="data.sub_types" let-i="index" [ngForTrackBy]="trackByFn">
+			<li>
+				<a href="javascript:;" 
+					[ngClass]="{selected:selected===sub_type.name}" 
+					(click)="selected=sub_type.name;sub_show=false;onSelected(sub_type.name)"
+				>
+					<span class="name">
+						{{sub_type.name}}
+					</span>
+					<span class="tip">
+						{{sub_type.tip}}
+					</span>
+				</a>
+			</li>
+			<br>
+		</ng-template>
+		
+	</ul>
+</div>

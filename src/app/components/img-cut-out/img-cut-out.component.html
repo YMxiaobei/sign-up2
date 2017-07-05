@@ -1,0 +1,42 @@
+<div class="main">
+	<div class="header">
+		<h1 class="title">建议上传高清封面960*600</h1>
+		<a href="javascript:;" class="btn-close"></a>
+	</div>
+	<div class="content">
+		<div class="left">
+			<div class="controllor">
+				<div class="poster">
+					<img src="" width="100%">
+					<div class="cut-out-frame">
+						<div class="left"></div>
+						<div class="mid"></div>
+						<div class="right"></div>
+					</div>
+				</div>
+				
+				<div class="border-right"></div>
+			</div>
+			<a href="javascript:;" class="btn-reselevte" (mouseover)="reselecte_active=true" (mouseout)="reselecte_active=false">
+				<span class="icon" [ngClass]="{icon:!reselecte_active,'icon-hover':reselecte_active}"></span>
+				<span class="txt">重新选择</span>
+			</a>
+		</div>
+		<div class="right">
+			<div class="result-preview">
+				<div class="poster">
+					<div class="img-wrap">
+						<img src="" width="100%">
+					</div>
+				</div>
+				<div class="tip">
+					<p>封面最终展示效果如上所示</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<a href="javascript:;" class="btn-submit">确认</a>
+		<a href="javascript:;" class="btn-cancel">取消</a>
+	</div>
+</div>

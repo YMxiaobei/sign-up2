@@ -1,0 +1,147 @@
+@import "~compass-mixins/lib/compass";
+@import "src/assets/styles/icons-mixin.scss";
+@import "src/assets/styles/color.scss";
+@import "src/assets/styles/variable.scss";
+
+$width: 980px;
+$content-height: 500px;
+$helper-height: 170px;
+
+.main {
+	width: 100%;
+	margin: 0px auto;
+	background: url(/assets/img/contribute-bg.jpg) no-repeat center -100px;
+	box-sizing: content-box;
+	padding-bottom: 20px;
+
+	.content {
+		height: $content-height;
+		width: $width;
+		margin: 0px auto;
+		background-color: white;
+		position: relative;
+		top: 30px;
+		border-radius: 5px;
+		@include box-shadow(0px 1px 1px 0px rgba(0,0,0,0.1));
+		
+		.btn-submit {
+			width: 260px;
+			height: 74px;
+			background-image: url(/assets/img/contribute-btn.png);
+			display: block;
+			top: ( $content-height - 74 ) / 2 - 35; 
+			margin-left: auto;
+			margin-right: auto;
+			position: relative;
+
+			&:hover {
+				background-image: url(/assets/img/contribute-btn-hover.png)
+			}
+		}
+
+		.tip {
+			height: 16px;
+			font-size: 16px;
+			text-align: center;
+			position: relative;
+			top: ( $content-height - 74 ) / 2;
+
+		}
+	}
+
+	.helper {
+		width: $width;
+		height: $helper-height;
+		background-color: white;
+		margin: 60px auto 0px auto;
+		@include box-shadow(0px 1px 1px 0px rgba(0,0,0,0.1));
+		border-radius: 5px;
+		font-size: 12px;
+
+		.wrap {
+			padding: 20px;
+			width: 100%;
+			height: 100%;
+
+			.left {
+				width: $width / 2;
+				float: left;
+
+				.declaration {
+					width: 100%;
+					height: 100%;
+
+					ul {
+						li {
+							color: $font-color4;
+							margin-top: 15px;
+
+							&:before {
+								width: 6px;
+								height: 6px;
+								content: "";
+								display: inline-block;
+								vertical-align: top;
+								margin-right: 7px;
+								background-color: $blue1;
+								border-radius: 50%;
+							}
+						}
+					}
+
+					.detail-link {
+						height: 16px;
+						line-heigtt: 16px;
+						font-size: 13px;
+						margin-top: 20px;
+
+						.contribute-notice, .questions {
+							display: inline-block;
+							hieght: 100%;
+							color: $font-color2;
+							box-sizing: content-box;
+						}
+
+						.contribute-notice {
+							padding-right: 15px;
+							border-right: 1px solid $font-color2;
+							.icon {
+								@include i-artical;
+								position: relative;
+								bottom: 1px;
+								margin-right: 5px;
+							}
+
+							.icon-hover {
+								@include i-artical-hover;
+							}
+						}
+
+						.questions {
+							padding-left: 15px;
+							.icon {
+								@include i-question;
+								position: relative;
+								bottom: 1px;
+								margin-right: 5px;
+							}
+
+							.icon-hover {
+								@include i-question;;
+							}
+						}
+					}
+				}
+			}	
+
+			.right {
+				width: 100px;
+			}
+		}
+
+		.title {
+			font-size: 13px;
+			font-weight: bold;
+		}
+	}
+}

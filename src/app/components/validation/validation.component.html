@@ -1,3 +1,69 @@
-<div class="validation">
-	
+<div class="validation" 
+	(mouseover)="img_show=true"
+	(mouseout)="onSlideMouseout ()"
+>
+	<div class="tip-unpass" *ngIf="tip_unpass_show">
+		<p>!拼图验证没有通过</p>
+	</div>
+	<div class="slideway"
+		[ngStyle]="{
+			'width.px': slideway_lone
+		}"
+	>
+		<span class="tip" 
+			*ngIf="tip_show"
+			[ngClass]="{
+				hidden:slide_active,
+				tip:!slide_active
+			}"
+		>
+			按住左边滑块，拖动完成上方拼图</span>
+		<div class="slide"
+			[ngStyle]="{
+				'left.px': slide_left
+			}"
+		>
+			<div class="i-slide"
+				(mousedown)='onSlideMouseDown($event)'
+				[ngClass]='{
+					"i-slide": !slide_active,
+					"i-slide-hover": slide_active
+				}'
+			></div>
+		</div>
+	</div>
+	<div class="img-wrap"
+		[ngClass]="{
+			hidden: !img_show
+		}"
+	>
+		<div class="img">
+			<div class="embed"
+				[ngStyle]="{
+					'left.px': embed_left,
+					'top.px': embed_top
+				}"
+			></div>
+			<div class="plugged-impression"
+				[ngClass]="{
+					'plugged-impression-in':plu_in,
+					'plugged-impression-out':!plu_in
+				}"
+				[ngStyle]="{
+					'left.px': plu_left,
+					'top.px': plu_top,
+					'background-position': -embed_left + 'px' + ' ' + ( -embed_top + 'px' )
+				}"
+			></div>
+		</div>
+		<a href="javascript:;" class="i-refresh" (click)="reset()"></a>
+		<span class="tip-fail" *ngIf="pass==='fail'">验证失败，请点击左侧的刷新按钮重新验证</span>
+	</div>
+	<div class="i-lock"
+		[ngClass]="{
+			'i-lock': pass==='unknow',
+			'i-ok': pass==='success',
+			'i-fail': pass==='fail'
+		}"
+	></div>
 </div>
