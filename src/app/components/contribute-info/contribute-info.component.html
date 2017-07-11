@@ -3,6 +3,7 @@
 		<div class="upload-poster">
 			<div class="btn-selecte-poster">
 				<a href="javascrtpt:;"></a>
+				<input type="file" name="upload-poster" (change)='openImg($event)'>
 			</div>
 			<div class="upload-preview">
 				<div class="upload-placeholder">
@@ -164,8 +165,7 @@
 			<a href="javascript:;" class="btn-submit">提交稿件</a>
 		</div>
 	</div>
-	<div class="img-cut-out">
-		<app-img-cut-out></app-img-cut-out>
-	</div>
-	
+</div>
+<div class="img-cut-out2">
+	<app-img-cut-out [img_base64_str]="img_base64_str"></app-img-cut-out>
 </div>

@@ -7,11 +7,28 @@
 		<div class="left">
 			<div class="controllor">
 				<div class="poster">
-					<img src="" width="100%">
-					<div class="cut-out-frame">
-						<div class="left"></div>
-						<div class="mid"></div>
-						<div class="right"></div>
+					<img [src]="img_base64_str" width="100%" #img (load)='getSize ( img )'>
+					<div class="cut-out-frame" #frame>
+						<div class="mid" 
+							[ngStyle]="{
+								'width.px':mid_width,
+								'height.px':mid_height,
+								'left.px':mid_left,
+								'top.px':mid_top
+							}" 
+							(mousedown)="activeSlide($event)"
+						>
+							<img 
+								[src]="img_base64_str" 
+								[width]="img_width"
+								[height]="img_height"
+								[ngStyle]="{
+									'left.px':-mid_left,
+									'top.px':-mid_top
+								}"
+							>
+							<div class="cover"></div>		
+						</div>
 					</div>
 				</div>
 				
@@ -20,14 +37,21 @@
 			<a href="javascript:;" class="btn-reselevte" (mouseover)="reselecte_active=true" (mouseout)="reselecte_active=false">
 				<span class="icon" [ngClass]="{icon:!reselecte_active,'icon-hover':reselecte_active}"></span>
 				<span class="txt">重新选择</span>
+				<input type="file" name="upload_img" (change)='openImg($event)'>
 			</a>
 		</div>
 		<div class="right">
 			<div class="result-preview">
 				<div class="poster">
-					<div class="img-wrap">
-						<img src="" width="100%">
-					</div>
+					<img 
+						[src]="img_base64_str" 
+						[width]="img_width*img_ratio"
+						[height]="img_height*img_ratio"
+						[ngStyle]="{
+							'left.px':-mid_left*img_ratio,
+							'top.px':-mid_top*img_ratio
+						}"
+					>
 				</div>
 				<div class="tip">
 					<p>封面最终展示效果如上所示</p>

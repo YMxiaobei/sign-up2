@@ -31,16 +31,27 @@ $left-content-width: 160px;
 
 		.upload-poster {
 			width: $left-content-width;
-
+			
 			.btn-selecte-poster {
 				width:  100%;
 				height: 100px;
+				position: relative;
 
 				a {
 					width: 100%;
 					height: 100%;
 					display: block;
 					background-image: url(/assets/img/upload-poster-btn.png);
+				}
+
+				input {
+					width: 100%;
+					height: 100%;
+					position: absolute;
+					left: 0px;
+					top: 0px;
+					opacity: 0;
+					cursor: pointer;
 				}
 			}
 
@@ -549,4 +560,17 @@ $left-content-width: 160px;
 			}
 		}
 	}
+
+
 } 
+
+.img-cut-out2 {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.8);
+	top: 0px;
+	left: 0px;
+	position: fixed;
+	display: block;
+	z-index: 9999;
+}
