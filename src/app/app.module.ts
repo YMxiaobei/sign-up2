@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { FileUploadModule } from 'ng2-file-upload';
 
 import { AppService } from './app.service';
 import { AppComponent } from './app.component';
@@ -35,7 +36,8 @@ import { ImgCutOutComponent } from './components/img-cut-out/img-cut-out.compone
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FileUploadModule
   ],
   providers: [AppService],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { getFileDataUrl } from 'public/function';
+import { VideoInfo } from 'app/classes/video-info';
 
 @Component({
   selector: 'app-img-cut-out',
@@ -14,12 +15,13 @@ export class ImgCutOutComponent implements OnInit {
   upload_img_max_height: number = 480 / 960 * 600;
   img_mini_width: number = 240;
 
+  upload_data: VideoInfo = new VideoInfo ();
+
   img_ratio: number;
   mid_width: number;
   mid_height: number;
   mid_left: number;
   mid_top: number;
-
 
   direction: string;
   slide_active: boolean = false;
@@ -28,43 +30,62 @@ export class ImgCutOutComponent implements OnInit {
   img_height: number;
   img_width: number;
 
-  _alert ( data:any ) {
-    alert ( data );
-  }
-
- 
+  @Output() close: EventEmitter<any> = new EventEmitter();
+  @Output() submit: EventEmitter<any> = new EventEmitter();
 
   @Input() img_base64_str: string;
 
   constructor() { }
 
+    _alert ( data:any ) {
+      alert ( data );
+    }
+
+   close_fun () {
+     this.close.emit();
+   } 
+
+   submit_fun () {
+     let _self = this;
+
+     let img_info = {
+       width: _self.mid_width,
+       height: _self.mid_height,
+       left: _self.mid_left,
+       top: _self.mid_top,
+       src: _self.img_base64_str
+     }
+
+     this.submit.emit ( img_info );
+   }
+
    getSize ( img:any ) {
-    let img_width = img.width;
-    let img_height = img.height;
-    this.img_height = img.height;
-    this.img_width = img.width;
+     let img_width = img.width;
+     let img_height = img.height;
+     this.img_height = img.height;
+     this.img_width = img.width;
 
-    if ( img_height > this.upload_img_max_height ) {
-      this.mid_height = this.upload_img_max_height;
-      this.mid_left = 0;
-      this.mid_width = this.upload_img_max_width
+     if ( img_height > this.upload_img_max_height ) {
+       this.mid_height = this.upload_img_max_height;
+       this.mid_left = 0;
+       this.mid_width = this.upload_img_max_width
 
-      this.direction = "V";
-    }
+       this.direction = "V";
+     }
 
-    else {
-      this.mid_height = img_height;
+     else {
+       this.mid_height = img_height;
 
 
-      this.direction = "H";
+       this.direction = "H";
 
-      this.mid_width = this.upload_img_max_width * ( img_height / this.upload_img_max_height );
+       this.mid_width = this.upload_img_max_width * ( img_height / this.upload_img_max_height );
 
-      this.mid_left = ( this.upload_img_max_width - this.mid_width ) / 2;
-      this.mid_top = 0;
-    }
+       this.mid_left = ( this.upload_img_max_width - this.mid_width ) / 2;
+       this.mid_top = 0;
+     }
 
-    this.img_ratio = this.img_mini_width / this.mid_width;
+     this.img_ratio = this.img_mini_width / this.mid_width;
   }
 
   activeSlide ( e ) {

@@ -30,14 +30,21 @@ let mockData = {
 export class ClassifyVTypeComponent implements OnInit {
 
   @Input() data: any;
-  @Output() selectedType: EventEmitter<string> = new EventEmitter ()
+  @Output() selectedType: EventEmitter<any> = new EventEmitter ()
 
-  selected: string;
+  @Input() selected: string;
   
-  @Input() sub_show:  boolean = false;
+  @Input() sub_show: boolean = false;
 
   onSelected ( type_name:string ): void {
-  	this.selectedType.emit ( type_name );
+  	let _self = this;
+
+  	let type = {
+  	  parent_type: _self.data.name,
+  	  sub_type: _self.selected
+  	}
+
+  	this.selectedType.emit ( type );
   }
 
   constructor() { }

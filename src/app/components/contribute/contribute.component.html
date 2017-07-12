@@ -1,7 +1,9 @@
 <div class="main">
-	<div class="container hidden">
+	<div class="container" [ngClass]="{hidden:show===2}">
 		<div class="content">
-			<a href="javascript:;" class="btn-submit"></a>
+			<a href="javascript:;" class="btn-submit">
+				<input type="file" name="upload-video" ng2FileSelect [uploader]="uploader" (change)="uploadVideo ()">
+			</a>
 			<div class="tip">拖拽视频到此处也可上传</div>
 		</div>
 		<div class="helper">
@@ -37,7 +39,11 @@
 			</div>
 		</div>
 	</div>
-	<div class="container2">
-		<app-contribute-info></app-contribute-info>
+	<div class="container2" *ngIf="show===2">
+		<app-contribute-info 
+			[progress]="progress"
+			[video_size]="video_size"
+			[video_title]="video_title"
+		></app-contribute-info>
 	</div>
 </div>

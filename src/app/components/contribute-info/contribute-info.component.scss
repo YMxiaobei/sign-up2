@@ -157,6 +157,14 @@ $left-content-width: 160px;
 								color: $blue1; 
 							}
 						}
+
+						.upload-rate {
+							margin-left: 10px;
+						}
+
+						.upload-time-remain {
+							margin-left: 10px;
+						}
 					}
 
 					.button {
@@ -193,6 +201,15 @@ $left-content-width: 160px;
 					border-radius: 2px;
 					background-color: $gray1;
 					margin-top: 13px;
+					position: relative;
+
+					.fill {
+						height: 100%;
+						background: $blue1;
+						position: absolute;
+						top: 0px;
+						left: 0px;
+					}
 				}	
 			}
 		}
@@ -428,6 +445,12 @@ $left-content-width: 160px;
 												border: 1px solid $blue1;
 											}
 										}
+
+										a.selected {
+											background-color: $blue1;
+											color: white;
+											border: 1px solid $blue1;
+										}
 										
 									}
 								}
@@ -439,17 +462,21 @@ $left-content-width: 160px;
 								text-align: left;
 								margin-top: 50px;
 
+
 								h1 {
 									font-size: 12px;
 								}
 
 								ul {
 									display: inline-block;
+									vertical-align: top;
 
 									li {
 										display: inline-block;
 										vertical-align: top;
 										line-height: 22px;
+										margin-left: 20px;
+										margin-top: 10px;
 
 										a {
 											display: inline-block;
@@ -459,6 +486,15 @@ $left-content-width: 160px;
 											padding: 0px 18px;
 											border: 1px solid $blue1;
 											border-radius: 11px;
+											font-size: 12px;
+										}
+
+										.i-cancel {
+											@include i-cancel;
+
+											&:hover {
+												@include i-cancel-hover;
+											}
 										}
 									}
 								}
@@ -467,6 +503,7 @@ $left-content-width: 160px;
 									margin-top: 10px;
 									verticala-align: top;
 									margin-left: 10px;
+									vertical-align: top;
 
 									.custom-tag {
 										height: 22px;

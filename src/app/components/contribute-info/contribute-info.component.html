@@ -28,11 +28,20 @@
 			<div class="right">
 				<div class="controllor">
 					<div class="txt">
-						<span class="title">{{v_title}}</span>
+						<span class="title">{{upload_data.contribute_title}}</span>
 						<span class="status">{{upload_status}}...</span>
 						<div class="progress-percentage">
 							<span>已完成</span>
-							<span class="percentage">{{progress_percentage}}%</span>
+							<span class="percentage">{{progress}}%</span>
+						</div>
+						<div class="upload-rate" *ngIf="upload_status==='上传中'">
+							<span>{{upload_rate}}{{unit}}</span>
+							/
+							<span>s</span>
+						</div>
+						<div class="upload-time-remain" *ngIf="upload_status==='上传中'&&remain_time!='00:00:00'">
+							<span>距离上传完成还有</span>
+							<span>{{remain_time}}</span>
 						</div>
 					</div>
 					<div class="button">
@@ -41,9 +50,7 @@
 					</div>
 				</div>
 				<div class="progress-bar">
-					<div class="fill">
-						
-					</div>
+					<div class="fill" [ngStyle]="{'width.%':progress}"></div>
 				</div>
 			</div>
 		</div>
@@ -75,34 +82,43 @@
 					<li class="type section">
 						<h1 class="title">投稿类型</h1>
 						<div class="c-type-content">
-							<input type="radio" name="c-type" id="c-type-self_make">
+							<input type="radio" name="c-type" id="c-type-self_make" (click)="upload_data.contribute_type='self_make'">
 							<label for="c-type-self_make">自制</label>
-							<input type="radio" name="c-type" id="c-type-reprint">
+							<input type="radio" name="c-type" id="c-type-reprint" (click)="upload_data.contribute_type='reprint'">
 							<label for="c-type-reprint">转载</label>
 						</div>
 						<div class="statement">
-							<input type="checkbox" name="statement" id="c-type-statement">
+							<input type="checkbox" name="statement" id="c-type-statement" [(ngModel)]="upload_data.no_free_reprint">
 							<label for="c-type-statement">未经作者授权 禁止转载</label>
 						</div>
 					</li>
 					<li class="section-select section">
 						<h1 class="title">选择分区</h1>
 						<ul class="list-unstyled v-types">
-							<li *ngFor="let type of v_types" class="v-type">
-								<app-classify-v-type [data]="type"></app-classify-v-type>
+							<li *ngFor="let type of v_types;let i = index" class="v-type" (click)="active_v_type=i">
+								<app-classify-v-type 
+									[data]="type" 
+									[sub_show]="i===active_v_type"
+									[selected]="getSubType(upload_data.v_sub_type, i)"
+									(selectedType)="
+										upload_data.v_parent_type=$event.parent_type;
+										upload_data.v_sub_type=$event.sub_type;
+										selected_v_type=i;
+									"
+								></app-classify-v-type>
 							</li>
 						</ul>
-						<div class="selecte-result">
+						<div class="selecte-result" *ngIf="upload_data.v_parent_type&&upload_data.v_sub_type">
 							<span>您当前选择的分区是：</span>
-							<span class="result">{{selected_v_type}} → {{selected_v_sub_type}}</span>
+							<span class="result">{{upload_data.v_parent_type}} → {{upload_data.v_sub_type}}</span>
 						</div>
 					</li>
 					<li class="title section">
 						<h1 class="title">稿件标题</h1>
 						<div class="v-title">
-							<input type="text" name="v-title" [(ngModel)]='v_title' >
+							<input type="text" name="v-title" [(ngModel)]='upload_data.contribute_title' [maxlength]="max_title_size">
 							<div class="input-size">
-								<span class="current-size">{{v_title.length}}</span>
+								<span class="current-size">{{upload_data.contribute_title.length}}</span>
 								/
 								<span class="max-size">{{max_title_size}}</span>
 							</div>
@@ -124,20 +140,25 @@
 								<h1>推荐标签</h1>
 								<ul>
 									<li *ngFor="let tag of recommend_tags">
-										<a href="javascript:;">{{tag}}</a>
+										<a href="javascript:;" 
+											[title]="tag" 
+											(click)="addTag(tag)" 
+											[ngClass]="{selected:_getIndex(tag,upload_data.tags)!==false}"
+										>{{tag}}</a>
 									</li>
 								</ul>
 							</div>
 							<div class="custom-tags">
 								<h1>自定义标签</h1>
 								<ul>
-									<li>
-										<a href="javascript:;">adfasdf</a>
+									<li *ngFor="let tag of custom_tags">
+										<a href="javascript:;">{{tag}}</a>
+										<span class="i-cancel" (click)="rmTag(tag)"></span>
 									</li>
 								</ul>
 								<div class="add-custom-tags">
 									<div class="custom-tag">
-										<input type="text" name="custom-tag">
+										<input type="text" name="custom-tag" #newTag (keydown)="onkeydown($event, newTag.value)">
 									</div>
 									<div class="tip">按回车键Enter创建标签</div>
 								</div>
@@ -147,9 +168,9 @@
 					<li class="v-Introduction section">
 						<h1 class="title">视频简介</h1>
 						<div class="v-Introduction-content">
-							<textarea placeholder="填写更全面的相关信息,让更多的人能找到你的视频吧! BGM 建议格式：音乐人-音乐名使用素材 举例：埃罗芒阿老师  Re:CREATORS使用别人的MAD作为自己作品的素材是不允许的！" [(ngModel)]="v_Introduction"></textarea>
+							<textarea placeholder="填写更全面的相关信息,让更多的人能找到你的视频吧! BGM 建议格式：音乐人-音乐名使用素材 举例：埃罗芒阿老师  Re:CREATORS使用别人的MAD作为自己作品的素材是不允许的！" [(ngModel)]="upload_data.introduction" [maxlength]="max_v_Introduction_size"></textarea>
 							<div class="size">
-								<span class="current-size">{{v_Introduction.length}}</span>
+								<span class="current-size">{{upload_data.introduction.length}}</span>
 								/
 								<span class="max-size">{{max_v_Introduction_size}}</span>
 							</div>
@@ -162,10 +183,10 @@
 				<a href="javascript:;" class="">以上信息保存为模版</a>
 			</div>
 			<div class="set-release-time"></div>
-			<a href="javascript:;" class="btn-submit">提交稿件</a>
+			<a href="javascript:;" class="btn-submit" (click)="submit()">提交稿件</a>
 		</div>
 	</div>
 </div>
-<div class="img-cut-out2">
-	<app-img-cut-out [img_base64_str]="img_base64_str"></app-img-cut-out>
+<div class="img-cut-out2" *ngIf="img_cut_out_show">
+	<app-img-cut-out [img_base64_str]="img_base64_str" (close)="img_cut_out_show=false" (submit)="img_info=$event"></app-img-cut-out>
 </div>
